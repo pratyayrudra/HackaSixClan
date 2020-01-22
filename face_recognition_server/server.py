@@ -74,7 +74,7 @@ def detect_faces_in_image(file_stream):
 
     for (face_encoding,face_location) in zip(unknown_face_encodings,unknown_face_locations):
         # See if the face is a match for the known face(s)
-        matches = face_recognition.compare_faces(known_encodings, face_encoding)
+        matches = face_recognition.compare_faces(known_encodings, face_encoding,tolerance=0.5)
         index = -1
         name = ""
         found = False
